@@ -1,67 +1,84 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PHANTOM | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <h1 class="logo">PHANTOM</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="hero">
-      <h2>Hello, I'm <span>PHANTOM</span></h2>
-      <p>A passionate developer building modern websites.</p>
-      <a href="#projects" class="btn">Explore My Work</a>
-    </div>
+    <nav class="navbar">
+      <div class="logo">PHANTOM</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="toggle-btn">
+        <button id="modeToggle">🌙</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </div>
+    </nav>
   </header>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I'm currently pursuing a DevOps internship. I enjoy crafting beautiful and functional web pages using HTML, CSS, and GitHub Pages. This site is my digital playground.</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Hello, I'm PHANTOM</h1>
+      <p>A passionate developer building modern websites.</p>
+      <a href="#projects" class="btn">Explore My Work</a>
+    </section>
 
-  <section id="projects" class="section projects">
-    <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Currently pursuing a DevOps internship. I craft functional web pages using HTML, CSS, and GitHub Pages. This is my digital playground.</p>
+    </section>
+
+    <section id="projects">
       <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="card">
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x180?text=Portfolio+Site" alt="Portfolio Project">
           <h3>Portfolio Site</h3>
-          <p>Personal static site hosted with GitHub Pages.</p>
+          <p>Hosted using GitHub Pages.</p>
         </div>
-        <div class="card">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x180?text=Landing+Page" alt="Landing Page">
           <h3>Landing Page</h3>
-          <p>A simple and clean single-page design made with HTML/CSS.</p>
+          <p>Single-page site built with HTML/CSS.</p>
         </div>
-        <div class="card">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x180?text=DevOps+Tasks" alt="DevOps Tasks">
           <h3>DevOps Tasks</h3>
-          <p>Terraform, Docker, and Kubernetes projects under progress.</p>
+          <p>Terraform, Docker & Kubernetes projects.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="section">
-    <div class="container">
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Connect with me on <a href="https://github.com/PHANTOM0905" target="_blank">GitHub</a>.</p>
-    </div>
-  </section>
+      <form action="https://formspree.io/f/{your-form-id}" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 PHANTOM | All rights reserved.</p>
+    <p>© 2025 PHANTOM | All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
 </body>
 </html>
