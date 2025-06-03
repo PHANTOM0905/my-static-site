@@ -1,73 +1,81 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary-color: #4a00e0;
+  --secondary-color: #8e2de2;
+  --text-color: #333;
+  --bg-light: #f9f9f9;
+  --bg-dark: #2c2c2c;
+  --white: #fff;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-light);
 }
 
 header {
-  background: linear-gradient(to right, #4a00e0, #8e2de2);
-  color: white;
-  padding-bottom: 40px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 40px 0;
+  text-align: center;
 }
 
-nav {
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.nav-links li a {
+nav a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #f0c040;
+  font-weight: bold;
 }
 
 .hero {
-  text-align: center;
-  padding: 60px 20px;
+  padding: 60px 0;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+.hero h2 {
+  font-size: 36px;
+}
+
+.hero h2 span {
+  color: #f0c040;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  margin-top: 20px;
   background-color: #f0c040;
-  color: #000;
+  color: black;
+  padding: 12px 24px;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
+  font-weight: bold;
   transition: background 0.3s ease;
 }
 
@@ -75,26 +83,37 @@ nav {
   background-color: #e0a030;
 }
 
-.about {
-  padding: 40px 10%;
+section {
+  padding: 60px 0;
   background-color: white;
-  text-align: center;
 }
 
-.about h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+#projects {
+  background-color: #f0f0f0;
 }
 
-.about p {
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto;
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 30%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #333;
+  background-color: var(--bg-dark);
   color: white;
 }
